@@ -1,4 +1,7 @@
 import NextAuth from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
+import GitHubProvider from "next-auth/providers/github";
+
 import  CredentialsProvider from "next-auth/providers/credentials";
 const handler = NextAuth({
     providers:[
@@ -36,8 +39,23 @@ const handler = NextAuth({
 
        
     }
+  }),
+
+  GoogleProvider({
+    clientId: "abc",
+    clientSecret: "abc"
+  }),
+
+   GitHubProvider({
+    clientId: "abc",
+    clientSecret: "abc"
   })
+
+
 ]
+
+
+
     
 })
 
